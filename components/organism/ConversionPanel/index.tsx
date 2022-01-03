@@ -8,7 +8,7 @@ export interface ValuesState {
 }
 export enum OPTypes {
   TO_DECIMAL = 'TO_DECIMAL',
-  TO_BINARY = 'TO_BINARY',
+  TO_BINARY = 'TO_BINARY'
 }
 
 const dec2bin = (num: number | string) => {
@@ -37,14 +37,14 @@ const bin2dec = (num: number | string) => {
 const ConversionPanel = () => {
   const [values, setValues] = useState<ValuesState>({
     binary: 0,
-    decimal: 0,
+    decimal: 0
   })
 
   const handleConversion = (value: number | string, operation: OPTypes) => {
     console.log(value, operation)
     setValues({
       decimal: operation === OPTypes.TO_BINARY ? value : bin2dec(value),
-      binary: operation === OPTypes.TO_DECIMAL ? value : dec2bin(value),
+      binary: operation === OPTypes.TO_DECIMAL ? value : dec2bin(value)
     })
   }
 
