@@ -1,6 +1,5 @@
 import { Input } from "antd"
-import { OPTypes, ValuesState } from "components/organism/ConversionPanel"
-import { Dispatch, SetStateAction } from "react"
+import { OPTypes } from "components/organism/ConversionPanel"
 
 interface Props {
   value: string | number
