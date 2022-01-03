@@ -1,37 +1,37 @@
-import { Col, Row, Typography } from "antd"
-import ConversionInput from "components/molecule/ConversionInput"
-import { useState } from "react"
+import { Col, Row, Typography } from 'antd'
+import ConversionInput from 'components/molecule/ConversionInput'
+import { useState } from 'react'
 
 export interface ValuesState {
   binary: number | string
   decimal: number | string
 }
 export enum OPTypes {
-  TO_DECIMAL = "TO_DECIMAL",
-  TO_BINARY = "TO_BINARY",
+  TO_DECIMAL = 'TO_DECIMAL',
+  TO_BINARY = 'TO_BINARY',
 }
 
 const dec2bin = (num: number | string) => {
   let acum = Number(num)
   console.log(acum)
-  let binaryString = ""
+  let binaryString = ''
   while (acum > 0) {
     console.log(binaryString)
     binaryString += acum % 2
     acum = Math.trunc(acum / 2)
   }
-  return binaryString.toString().split("").reverse().join("")
+  return binaryString.toString().split('').reverse().join('')
 }
 
 const bin2dec = (num: number | string) => {
   const ret = String(num)
-    .split("")
+    .split('')
     .reverse()
     .reduce((prev, current, idx) => {
       console.log(prev, current, idx)
       return Number(prev) + Number(current) * Math.pow(2, idx)
     }, 0)
-  console.log("bin2dec", ret)
+  console.log('bin2dec', ret)
   return ret
 }
 const ConversionPanel = () => {

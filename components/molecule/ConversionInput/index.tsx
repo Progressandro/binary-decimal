@@ -1,5 +1,5 @@
-import { Input } from "antd"
-import { OPTypes } from "components/organism/ConversionPanel"
+import { Input } from 'antd'
+import { OPTypes } from 'components/organism/ConversionPanel'
 
 interface Props {
   value: string | number
@@ -12,7 +12,7 @@ const validate = (
   operation: OPTypes,
   prevValue: number | string
 ) => {
-  if (newValue === "") return 0
+  if (newValue === '') return 0
   if (operation === OPTypes.TO_BINARY) {
     return !isNaN(Number(newValue)) ? Number(newValue) : prevValue
   } else {
