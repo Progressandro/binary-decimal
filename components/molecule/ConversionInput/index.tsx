@@ -25,6 +25,7 @@ const ConversionInput = ({ value, operation, handleChange }: Props) => (
     className={classes.Input}
     type="text"
     value={value}
+    maxLength={8}
     onChange={(e) =>
       handleChange(validate(e.target.value, operation, value), operation)
     }
