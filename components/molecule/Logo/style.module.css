@@ -1,3 +1,8 @@
-.LogoText {
-  margin-bottom: 0 !important;
+.LogoTitle,
+.LogoSubtitle {
+  margin: 0 !important;
+}
+
+.LogoSubtitle {
+  margin-left: 1rem !important;
 }

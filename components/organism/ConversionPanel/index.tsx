@@ -1,6 +1,7 @@
 import { Col, Row, Typography } from 'antd'
 import ConversionInput from 'components/molecule/ConversionInput'
 import { useState } from 'react'
+import classes from './style.module.css'
 
 export interface ValuesState {
   binary: number | string
@@ -49,32 +50,48 @@ const ConversionPanel = () => {
   }
 
   return (
-    <Row>
-      <Col span={12}>
-        <Row justify="center">
-          <Typography.Title>Binary Value</Typography.Title>
-        </Row>
-        <Row justify="center">
-          <ConversionInput
-            value={values.binary}
-            operation={OPTypes.TO_DECIMAL}
-            handleChange={handleConversion}
-          />
-        </Row>
-      </Col>
-      <Col span={12}>
-        <Row justify="center">
-          <Typography.Title>Decimal Value</Typography.Title>
-        </Row>
-        <Row justify="center">
-          <ConversionInput
-            value={values.decimal}
-            operation={OPTypes.TO_BINARY}
-            handleChange={handleConversion}
-          />
-        </Row>
-      </Col>
-    </Row>
+    <>
+      <Row justify="center" className={classes.container}>
+        <Col span={12}>
+          <Row justify="center">
+            <Col span={24}>
+              <Row justify="center">
+                <Typography.Title>Binary Value</Typography.Title>
+              </Row>
+            </Col>
+            <Col span={24}>
+              <Row justify="center">
+                <ConversionInput
+                  value={values.binary}
+                  operation={OPTypes.TO_DECIMAL}
+                  handleChange={handleConversion}
+                />
+              </Row>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+      <Row justify="center" className={classes.container}>
+        <Col span={12}>
+          <Row justify="center">
+            <Col span={24}>
+              <Row justify="center">
+                <Typography.Title>Decimal Value</Typography.Title>
+              </Row>
+            </Col>
+            <Col span={24}>
+              <Row justify="center">
+                <ConversionInput
+                  value={values.decimal}
+                  operation={OPTypes.TO_BINARY}
+                  handleChange={handleConversion}
+                />
+              </Row>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </>
   )
 }
 
