@@ -1,6 +1,6 @@
 import { Input } from 'antd'
 import { OPTypes } from 'components/organism/ConversionPanel'
-
+import classes from './style.module.css'
 interface Props {
   value: string | number
   operation: OPTypes
@@ -22,6 +22,7 @@ const validate = (
 
 const ConversionInput = ({ value, operation, handleChange }: Props) => (
   <Input
+    className={classes.Input}
     type="text"
     value={value}
     onChange={(e) =>
